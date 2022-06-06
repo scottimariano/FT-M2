@@ -29,7 +29,7 @@ function ToDo (description) {
 
 // Tu código acá:
 ToDo.prototype.completeToDo = function() {
-  this.complete = true
+  this.complete = !this.complete
 }
 
 
@@ -56,11 +56,26 @@ function buildToDo(todo, index) {
   let toDoShell = document.createElement('div')
   toDoShell.className = 'toDoShell'
   let toDoText = document.createElement('span')
+  let toDoCheckBox = document.createElement('input')
+  toDoCheckBox.type = 'checkbox';
+  toDoCheckBox.id = index
+  toDoCheckBox.addEventListener('click', completeToDo)
+  toDoCheckBox.className = 'completeCheckbox'
+  if (todo.complete) {
+    toDoCheckBox.checked = true;
+    toDoText.className = 'completeText'
+  } else {
+    toDoCheckBox.checked = false
+    toDoText.className = ''
+  }
   toDoText.innerHTML = todo.description
-  toDoText.id = index
-  toDoText.addEventListener('click', completeToDo)
-  todo.complete ? toDoText.className = 'completeText' : toDoText.className = ''
+
+  //toDoText.id = index
+  //toDoText.addEventListener('click', completeToDo)
+  //todo.complete ? toDoText.className = 'completeText' : toDoText.className = ''
+  
   toDoShell.append(toDoText)
+  toDoShell.append(toDoCheckBox)
 
   return toDoShell
 }
