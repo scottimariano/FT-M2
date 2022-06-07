@@ -2,19 +2,21 @@
 
 
 nav{
-    //position: fixed;
+    position: fixed;
     .flex(column, center, center);
     padding: 15px;
     background-color: @nav-bg;
+    width: 100%;
+    opacity: .9;
 
     ul{
         .flex(row, space-around, center);
         padding-top: 10px;
-        width: 40%;
 
         li {
             padding: 10px;
             color: black;
+            text-align: center;
             a{
                 font-size: 15px;
                 cursor: pointer;
@@ -25,6 +27,7 @@ nav{
 
         @media @phone{
             width: 80%;
+            .li {padding: 1px;}
         }
     }
 }
