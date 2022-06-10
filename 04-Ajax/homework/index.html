@@ -4,25 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="index.css">
   <title>HomeWork Ajax</title>
 </head>
 <body>
-  <button id='boton'>Ver Amigos</button>
-  <ul id='lista'>
-  </ul>
-
-  <h2>Ver Amigos</h2>
-  <img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
-  <hr>
-  <input id='input'></input>
-  <button id='search'>Buscar</button>
-  <span id='amigo'></span>
-
-  <hr>
-  <input id='inputDelete'></input>
-  <button id='delete'>Delete</button>
-  <span id='success'></span>
+  <header>
+    <h1>MIS AMIGOS</h1>
+  </header>
+  <section>
+    <div id="main">
+      <button id='boton' onclick=`${mostrarAmigos()}`>Ver Amigos</button>
+      <ul id='lista'>
+      </ul>
+    </div>
+    <div id="sidebar">
+      <h3>BUSCAR AMIGO</h3>
+      <!-- <img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' /> -->
+      <hr>
+      <input id='input' placeholder="Coloque un id a buscar"></input>
+      <button id='search' onclick=`${buscarAmigo()}`>Buscar</button>
+      <span id='amigo'></span>
+      
+      <hr>
+      <h3>BORRAR AMIGO</h3>
+      <input id='inputDelete' placeholder="Coloque un id para borrar"></input>
+      <button id='delete' onclick=`${borrarAmigo()}`>Delete</button>
+      <span id='success'></span>
+    </div>
+  </section>
   <script src="index.js"></script>
 </body>
 </html>

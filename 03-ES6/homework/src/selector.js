@@ -43,28 +43,32 @@ var matchFunctionMaker = function(selector) {
   var matchFunction;
   if (selectorType === "id") { 
     matchFunction  = (element) => {
-      if (element.id === selector.slice(1)) return true
-      return false
+      return element.id === selector.slice(1)
+      // if (element.id === selector.slice(1)) return true
+      // return false
     }
   } else if (selectorType === "class") {
     matchFunction  = (element) => {
-        if (element.classList.contains(selector.slice(1))){
-          return true
-        } else {
-          return false
-        }
+      return element.classList.contains(selector.slice(1))
+      // if (element.classList.contains(selector.slice(1))){
+        //   return true
+        // } else {
+        //   return false
+        // }
     }
   } else if (selectorType === "tag.class") {
     let array = selector.split('.');
     matchFunction  = (element) => {
-      if (element.tagName.toLowerCase() === array[0] && element.classList.contains(array[1])) return true
-      else return false
+      return element.tagName.toLowerCase() === array[0] && element.classList.contains(array[1])
+      //   if (element.tagName.toLowerCase() === array[0] && element.classList.contains(array[1])) return true
+    //   else return false
     }
     
   } else if (selectorType === "tag") {
     matchFunction  = (element) => {
-      if (element.tagName.toLowerCase() === selector.toLowerCase() ) return true
-      else return false
+      return element.tagName.toLowerCase() === selector.toLowerCase()
+      // if (element.tagName.toLowerCase() === selector.toLowerCase() ) return true
+      // else return false
     }
   }
   return matchFunction;

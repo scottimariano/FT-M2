@@ -59,7 +59,6 @@ app.get("/amigos/:id", function(req, res)  {
   const {id} = req.params;
   let friendIndex = amigos.findIndex(friend => friend.id == id);
   var friend = amigos[friendIndex]
-  console.log(res.status)
   res.status(200).json(friend);
 });
 
@@ -84,8 +83,22 @@ app.put("/amigos/:id", (req, res) => {
 });
 
 app.delete("/amigos/:id", (req, res) => {
-  amigos = amigos.filter(friend => friend.id != req.params.id);
-  res.status(200).json(amigos);
+  let ids = []
+  amigos.forEach(element => {
+    ids.push(element.id)
+  });
+  if (ids.includes(parseInt(req.params.id))) {
+    amigos = amigos.filter(friend => friend.id != req.params.id);
+    res.status(200).json(amigos);
+  } else {
+    res
+    .status(404)
+    .json({ message: `No se ha encontrado el id: "${req.params.id}" en nuestra base de datos` });
+  }
+  // amigos = amigos.filter(friend => friend.id != req.params.id);
+  // res
+  //   .status(200).json(amigos)
+  // ;
 });
 
 app.listen(5000, () => {
