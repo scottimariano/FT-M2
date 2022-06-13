@@ -1,0 +1,20 @@
+.SearchBar {
+    margin-right: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+}
+
+.buttonAgregar{
+    background-color: rgb(56, 54, 54);
+    border: solid 1px green;
+    color:green;
+    border-radius: 4px;
+}
+
+.buttonAgregar:hover{
+    background-color: rgb(133, 199, 35);
+    color: white;
+}

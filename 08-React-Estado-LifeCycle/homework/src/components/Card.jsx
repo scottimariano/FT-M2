@@ -1,28 +1,18 @@
 import React from 'react';
-import './Card.css';
+import styles from './Card.module.css'
 
-export default function Card ({min, max, name, img, onClose, id}) {
-    return (
-      <div className="card">
-        <div id="closeIcon" className="row">
-            <button onClick={onClose} className="btn btn-sm btn-danger">X</button>
-        </div>
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <div className="row">
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Min</p>
-              <p>{min}°</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Max</p>
-              <p>{max}°</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <img className="iconoClima" src={"http://openweathermap.org/img/wn/"+img+"@2x.png"} width="80" height="80" alt="" />
-            </div>
-          </div>
-        </div>
+export default function Card({id, max, min, name, img, onClose}) {
+  // acá va tu código
+
+  return (
+    <div className={styles.divContainer}>
+      <span onClick={onClose} className={styles.closeButton}>X</span>
+      <h2 className={styles.cityName}>{name}</h2>
+      <div className={styles.cardDetail}>
+        <p>{`Max: ${max}˚`}</p>
+        <p>{`Max: ${min}˚`}</p>
+        <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
       </div>
-    );
+    </div>
+  )
 };
