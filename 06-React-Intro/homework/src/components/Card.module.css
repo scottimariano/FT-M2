@@ -1,0 +1,42 @@
+.divContainer{
+position: relative;
+width: 250px;
+border: solid gray 1px;
+border-radius: 5px;
+padding: 5px;
+margin: 20px;
+}
+
+.divContainer h2{
+    margin: 0;
+    padding-top: 10px;
+}
+
+.closeButton{
+    position:absolute;
+    top: 3px;
+    right: 3px;
+    color: white;
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.closeButton:hover{
+    color: grey;
+    background-color: rgb(120, 0, 0);
+    cursor: pointer;
+}
+
+.cardDetail{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cardDetail p{
+    font-weight: 00;
+    width: 50px;
+}
