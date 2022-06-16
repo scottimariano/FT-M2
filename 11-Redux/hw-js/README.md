@@ -20,7 +20,7 @@ El botón de incremento debería incrementar el contador en 1.
 
 El botón de decremento debería disminuir el contador en 1. 
 
-El botón incremento impar. Deberia incrementar el contador el numero es impar.
+El botón incremento impar. Deberia incrementar el contador si el numero es impar.
 
 El botón incremento async. Deberia aumentar el contador con una demora de 1 segundo.
 
